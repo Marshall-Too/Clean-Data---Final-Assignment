@@ -1,0 +1,29 @@
+
+## Project Description
+Dataset describes 30 subjects behaviors with their samsung smartphones. Objective is to combine datasets of test and training datasets, and provide the average time taken for each subject for each behavior
+
+##Creating the tidy datafile
+
+1. Read training,test files from the directory
+2. Use rbind to combine test and training datasets
+3. Use left_join to identify the subject with the corresponding behaviour (Variable: X.names) and to identify the Y labels with the corresponding behaviour (Variable: Y.names) for e.g.
+1 =  WALKING 
+4. combine X and Y variables to create a dataframe with all the behaviors.
+5. Use select + str functions to identify columns which describe only mean and sd
+6. Use summarize + mean to generate the average value for each selected column in #5
+
+##Description of the variables in the tiny_data.txt file
+General description of the file including:
+* code column in TidyData renamed into activities  
+* All Acc in column’s name replaced by Accelerometer  
+* All Gyro in column’s name replaced by Gyroscope  
+* All BodyBody in column’s name replaced by Body  
+* All Mag in column’s name replaced by Magnitude  
+* All start with character f in column’s name replaced by Frequency  
+* All start with character t in column’s name replaced by Time  
+
+## Descrption of Variables
+* X (10299 rows, 561 columns) is created by merging x_train and x_test using rbind() function  
+* Y (10299 rows, 1 column) is created by merging y_train and y_test using rbind() function  
+* Subject (10299 rows, 1 column) is created by merging subject_train and subject_test using rbind() function  
+* Merged_Data (10299 rows, 563 column) is created by merging Subject, Y and X using cbind() function  
